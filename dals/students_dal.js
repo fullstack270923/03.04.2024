@@ -52,7 +52,7 @@ async function insert_students5() {
 async function get_all_students() {
     // add try catch
     const students = await data_base.raw("select * from students")
-    console.log(students.rows.map(s => `[${s.id}] ${s.name}`));
+    //console.log(students.rows.map(s => `[${s.id}] ${s.name}`));
     return {
         status: "success",
         data: students.rows
@@ -144,7 +144,7 @@ async function delete_student(id) {
 async function delete_table() {
     // delete table
     // try catch in case table does not exist
-    await data_base.raw(`DROP table students`)
+    await data_base.raw(`DROP table if exists students`)
     return {
         status: "success"
     }
@@ -171,5 +171,5 @@ async function delete_table() {
 module.exports = {
     get_all_students, get_student_by_id, insert_student,
     update_student, patch_student, delete_student, delete_table,
-    create_table, insert_students5
+    create_table, insert_students5, data_base
 }
