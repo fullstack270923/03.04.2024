@@ -73,7 +73,7 @@ async function insert_student(new_student) {
     try {
         delete new_student.id
         const result_ids = await data_base('students').insert(new_student).returning('id');
-        console.log(result_ids[0]);
+        //console.log(result_ids[0]);
 
         const id = result_ids[0].id // the new id
         return {

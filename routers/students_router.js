@@ -26,7 +26,7 @@ router.post('', async (request, response) => {
         const new_employee = request.body
         const result = await company_dal.insert_employee(new_employee)
        if (result.status == "success") 
-            response.status(201).json({ new_employee: result.data, url: `/api/employees/${result.data.id}` })
+            response.status(201).json({ new_employee: result.data, url: `/api/students/${result.data.id}` })
         else
             response.status(result.internal ? 500: 400).json({ status: "Failed to insert new employee", error: result.error })
 })

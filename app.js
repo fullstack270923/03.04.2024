@@ -15,7 +15,7 @@ app.use(express.static(path.join('.', '/static/')))
 
 app.use('/api/students', students_router)
 
-app.listen(config.server.port, () => {
-    console.log(`====== express server is running on port ${config.server.port} =======`);
-})
+ const server_api = app.listen(config.server.port, () => {
+     console.log(`====== express server is running on port ${config.server.port} =======`);
+ })
 
