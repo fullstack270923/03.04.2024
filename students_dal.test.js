@@ -8,7 +8,6 @@ describe('Testing students dal', () => {
         await students_dal.create_table();        
         await students_dal.insert_students5();
 
-
         // ACT
         const result = await students_dal.get_all_students();
 
@@ -27,5 +26,8 @@ describe('Testing students dal', () => {
 
           students_dal.data_base.destroy()
     })
+    
+    // add test for insert
+    // call add and then get by id and then assert the result of the get
 })
 
